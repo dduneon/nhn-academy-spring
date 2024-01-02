@@ -8,7 +8,7 @@
   <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.EmailMessageSender" >
   </bean>
 
-  <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender" >
+  <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender" scope="prototype">
   </bean>
 
 </beans>
