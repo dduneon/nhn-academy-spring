@@ -1,6 +1,7 @@
 package com.nhnacademy.edu.springframework.messagesender.service;
 
 import com.nhnacademy.edu.springframework.messagesender.MessageSender;
+import com.nhnacademy.edu.springframework.messagesender.SmsMessageSender;
 import com.nhnacademy.edu.springframework.messagesender.User;
 
 public class MessageSendService {
@@ -10,8 +11,9 @@ public class MessageSendService {
   public MessageSendService() {
   }
 
-  public void setMessageSender(
+  public void setSmsMessageSender(
       MessageSender messageSender) {
+    System.out.println("setMessageSender invoked!");
     this.messageSender = messageSender;
   }
 
