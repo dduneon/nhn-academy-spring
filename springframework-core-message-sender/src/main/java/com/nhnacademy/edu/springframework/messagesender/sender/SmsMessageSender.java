@@ -1,13 +1,13 @@
-package com.nhnacademy.edu.springframework.messagesender;
+package com.nhnacademy.edu.springframework.messagesender.sender;
 
+import com.nhnacademy.edu.springframework.messagesender.domain.User;
+import org.springframework.stereotype.Component;
+
+@Component
 public class SmsMessageSender implements MessageSender{
 
   public SmsMessageSender() {
     System.out.println("SmsMessageSender Initialize");
-  }
-
-  public void init() {
-    System.out.println("init method called in SmsMessageSender");
   }
 
   @Override

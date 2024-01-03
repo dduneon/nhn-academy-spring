@@ -1,6 +1,6 @@
 package com.nhnacademy.edu.springframework.messagesender.annotation;
 
-import com.nhnacademy.edu.springframework.messagesender.Message;
+import com.nhnacademy.edu.springframework.messagesender.domain.Message;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
