@@ -5,14 +5,18 @@ import com.nhnacademy.edu.springframework.messagesender.MessageSender;
 import com.nhnacademy.edu.springframework.messagesender.User;
 import com.nhnacademy.edu.springframework.messagesender.annotation.MessageQualifier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MessageSendService {
 
   private MessageSender messageSender;
 
+  public MessageSendService() {
+    System.out.println("default constructor call");
+  }
+
   @Autowired
-  @MessageQualifier(message = Message.EMAIL)
-  public MessageSendService( MessageSender messageSender) {
+  public MessageSendService(@Qualifier("smsMessageSender") MessageSender messageSender) {
     this.messageSender = messageSender;
   }
 
