@@ -15,8 +15,7 @@ public class MessageSendService {
     System.out.println("default constructor call");
   }
 
-  @Autowired
-  public MessageSendService(@Qualifier("smsMessageSender") MessageSender messageSender) {
+  public MessageSendService(MessageSender messageSender) {
     this.messageSender = messageSender;
   }
 
