@@ -3,21 +3,20 @@ package com.nhnacademy.edu.springframework.messagesender.service;
 import com.nhnacademy.edu.springframework.messagesender.MessageSender;
 import com.nhnacademy.edu.springframework.messagesender.SmsMessageSender;
 import com.nhnacademy.edu.springframework.messagesender.User;
+import com.nhnacademy.edu.springframework.messagesender.annotation.SMS;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MessageSendService {
   private MessageSender messageSender;
 
-  // setter injection 반드시 default constructor 필요
-  public MessageSendService() {
-  }
-
-  public void setSmsMessageSender(
+  public void setEmailMessageSender(
       MessageSender messageSender) {
     System.out.println("setMessageSender invoked!");
     this.messageSender = messageSender;
   }
 
-  public MessageSendService(MessageSender messageSender) {
+  @Autowired
+  public MessageSendService(@SMS MessageSender messageSender) {
     this.messageSender = messageSender;
   }
 
