@@ -7,16 +7,13 @@ import com.nhnacademy.edu.springframework.messagesender.annotation.SMS;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class MessageSendService {
+  @Autowired
+  @SMS
   private MessageSender messageSender;
 
   public void setEmailMessageSender(
       MessageSender messageSender) {
     System.out.println("setMessageSender invoked!");
-    this.messageSender = messageSender;
-  }
-
-  @Autowired
-  public MessageSendService(@SMS MessageSender messageSender) {
     this.messageSender = messageSender;
   }
 
