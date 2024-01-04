@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 @Service
 @Conditional(TestCondition.class)
 public class MessageSendService {
-  @Value("${senderName}")
-  private String senderName;
 
   private MessageSender messageSender;
 
@@ -29,7 +27,10 @@ public class MessageSendService {
 
   @Logging
   public void doSendMessage(User user, String message) {
-    System.out.println("sender name: " + senderName);
-    messageSender.sendMessage(user, message);
+    if(messageSender.sendMessage(user, message)) {
+      System.out.println("send success");
+    }else {
+      System.out.println("send failed");
+    }
   }
 }

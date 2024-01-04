@@ -1,5 +1,6 @@
 package com.nhnacademy.edu.springframework.messagesender.aspect;
 
+import java.util.Objects;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,7 +25,8 @@ public class LoggingAspect {
     try {
       stopWatch.start();
 
-      return pjp.proceed();
+      Object ret = pjp.proceed();
+      return ret;
     }finally {
       stopWatch.stop();
       System.out.println(stopWatch.prettyPrint());

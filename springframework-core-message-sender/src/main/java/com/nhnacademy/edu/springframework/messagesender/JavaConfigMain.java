@@ -8,11 +8,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class JavaConfigMain {
 
   public static void main(String[] args) {
-    User user = new User("test@nhnacademy.com", "010-9465-3421");
+    User user = new User("김준현", "test@nhnacademy.com", "010-9465-3421");
 
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.nhnacademy.edu.springframework.messagesender.config");
 
     MessageSendService service = context.getBean("messageSendService", MessageSendService.class);
-    service.doSendMessage(user, "message");
+    service.doSendMessage(user, "안녕하세요");
   }
 }

@@ -4,6 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:test.properties")
+@PropertySource("classpath:info.properties")
 public class PropertyConfig {
 }
