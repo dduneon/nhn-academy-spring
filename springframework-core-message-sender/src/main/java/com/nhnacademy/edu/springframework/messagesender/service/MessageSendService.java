@@ -1,5 +1,6 @@
 package com.nhnacademy.edu.springframework.messagesender.service;
 
+import com.nhnacademy.edu.springframework.messagesender.annotation.Logging;
 import com.nhnacademy.edu.springframework.messagesender.condition.TestCondition;
 import com.nhnacademy.edu.springframework.messagesender.sender.MessageSender;
 import com.nhnacademy.edu.springframework.messagesender.domain.User;
@@ -26,6 +27,7 @@ public class MessageSendService {
     this.messageSender = messageSender;
   }
 
+  @Logging
   public void doSendMessage(User user, String message) {
     System.out.println("sender name: " + senderName);
     messageSender.sendMessage(user, message);
